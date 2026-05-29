@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="fonts/montserrat.woff2"
+      crossorigin
+    />
+    <title>Obrigado pelo seu apoio - Amigos do Bem</title>
+    <link
+      rel="icon"
+      href="images/favicon.svg?v=1774843224"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="css/styles.css?v=1774843224" />
+    <style>
+      :root {
+        --primary: #FF6B00;
+        --primary-dark: #D55900;
+        --bg-main: #f6f6f6;
+        --bg-card: #ffffff;
+        --accent: #22c55e;
+      }
+      .success-icon-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+      .success-icon-wrapper svg {
+        width: 32px;
+        height: 32px;
+        fill: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-bg-main antialiased font-montserrat">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="icon-check" viewBox="0 0 448 512">
+        <path
+          d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+        ></path>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 512 512">
+        <path
+          d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+        ></path>
+      </symbol>
+    </svg>
+
+    <!-- Header -->
+    <header class="bg-primary shadow-sm" style="background-color: #f6f6f6">
+      <div class="px-4 py-3 flex items-center justify-center">
+        <a href="/"
+          ><img
+            src="images/logo.webp?v=1774843224"
+            alt="Logo"
+            class="h-[60px] w-auto"
+        /></a>
+      </div>
+    </header>
+
+    <main class="px-4 py-4 max-w-2xl mx-auto pb-[50px]">
+      <!-- Success Banner -->
+      <section class="success-banner rounded-xl overflow-hidden shadow-md">
+        <div class="success-icon-wrapper">
+          <svg>
+            <use href="#icon-check"></use>
+          </svg>
+        </div>
+        <h1>Doação Confirmada!</h1>
+        <p>Seu pagamento via PIX foi processado com sucesso.</p>
+      </section>
+
+      <!-- Quote testimonial -->
+      <section class="quote-section shadow-sm">
+        <p>
+          "O seu apoio é uma bênção para nós. Saber que hoje teremos comida no prato e água para beber devolve a alegria de lutar pelo amanhã das nossas crianças."
+        </p>
+        <cite>— Agradecimento de Maria de Fátima</cite>
+      </section>
+
+      <!-- Lead Capture Form -->
+      <section class="form-card shadow-lg">
+        <h2 class="text-xl font-bold text-text-primary text-center mb-2">
+          Gostaria de acompanhar o impacto da sua ajuda?
+        </h2>
+        <p class="text-sm text-text-secondary text-center mb-6">
+          Cadastre seu contato para receber fotos, notícias e relatórios transparentes das transformações geradas pela sua doação no sertão.
+        </p>
+
+        <form
+          id="lead-form"
+          data-name-error="Por favor, insira seu nome completo"
+          data-email-error="Por favor, insira um e-mail válido"
+          data-phone-error="Por favor, insira um telefone válido com DDD"
+        >
+          <div class="form-group">
+            <label for="lead-name">Nome Completo</label>
+            <input
+              type="text"
+              id="lead-name"
+              name="name"
+              placeholder="Digite seu nome completo"
+              required
+            />
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="lead-email">E-mail</label>
+            <input
+              type="email"
+              id="lead-email"
+              name="email"
+              placeholder="seu.email@exemplo.com"
+              required
+            />
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="lead-phone">Telefone / WhatsApp</label>
+            <input
+              type="tel"
+              id="lead-phone"
+              name="phone"
+              placeholder="(00) 00000-0000"
+              required
+            />
+            <span class="form-error"></span>
+            <p class="hint">Usaremos seu contato apenas para enviar relatórios de impacto.</p>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-submit mt-4"
+            data-submitting-text="Enviando..."
+            data-success-text="Cadastro Realizado!"
+            data-retry-text="Tentar Novamente"
+          >
+            <svg class="icon mr-1" width="16" height="16">
+              <use href="#icon-heart"></use>
+            </svg>
+            <span id="btn-text">Quero Acompanhar a Transformação</span>
+          </button>
+        </form>
+
+        <div class="form-footer">
+          Amigos do Bem • Instituição Sem Fins Lucrativos Protegida pela LGPD
+        </div>
+      </section>
+
+      <!-- Return button -->
+      <div class="text-center mt-6">
+        <a href="/" class="text-sm font-semibold text-primary hover:underline" style="color: #FF6B00;">
+          ← Voltar para a página principal
+        </a>
+      </div>
+    </main>
+
+    <script src="js/app.js?v=1774843224" defer></script>
+  </body>
+</html>
